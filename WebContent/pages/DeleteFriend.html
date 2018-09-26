@@ -1,0 +1,26 @@
+<body>
+
+   
+   <header>
+       <div class="logoname">
+         <img class="logo" src="../images/myfavicon.png" alt="">
+         <h1 class="name">RedNotes</h1>
+       </div>
+   </header>
+   <div class="content">
+     <div class="box" id="regcompleted">
+         <h1> Are you sure you want to delete "@{{friendsVM.friend.username}}" <br>
+            from your friends list? </h1>
+         <img class="userico2" data-ng-src="{{friendsVM.friend.image}}" alt="">
+          <p>	<span data-ng-if="friendsVM.friend.name!=''">"{{friendsVM.friend.name}} (@{{friendsVM.friend.username}})"</span>
+               	<span data-ng-if="friendsVM.friend.name==''">"@{{friendsVM.friend.username}}"</span></p>
+
+          <form >
+            <input type="submit" name="confirm" value="Yes, I am sure" data-ng-click="friendsVM.functions.deleteFriendAction(1)">
+            <input type="submit" name="confirm" value="No, I don't want to delete it." data-ng-click="friendsVM.functions.deleteFriendAction(0)">
+          </form>
+
+          <h3><a href="#!/friends"> Go back </a></h3>
+     </div>
+   </div>
+ </body>

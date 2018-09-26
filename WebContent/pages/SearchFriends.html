@@ -1,0 +1,91 @@
+ <body>
+  <!-- TOP BAR -->
+  <header data-ng-controller="headerCtrl as headerVM">
+    <!--MENU OF NAVEGATION-->
+    <nav>
+      <ul>
+        <li class="logoname">
+          <img class="logo" src="../images/myfavicon.png" alt="">
+          <h1 class="name">RedNotes</h1>
+        </li>
+        <li>
+          <h2><a href="#!/">Notes</a></h2>
+        </li>
+        <li>
+          <h2><a href="#!/reminders">Reminders</a></h2>
+        </li>
+        <li>
+            <h2><a href="#!/friends">Friends</a></h2>
+        </li>
+        <li>
+            <h2><a href="#!/petitions">Petitions</a></h2>
+        </li>
+      </ul>
+    </nav>
+    <!-- MENU OF PERFIL SETTINGS -->
+    <ul id="navPerfil">
+      <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+        <ul>
+          <li><a href="#!/perfil">View Perfil</a></li>
+          <li><a href="#!/editperfil">EditPerfil</a></li>
+          <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+        </ul>
+      </li>
+    </ul>
+  <!-- SEARCH BAR -->
+  <div class="searchbarDiv">
+    <form data-ng-submit="headerVM.functions.searchFriends()">
+      <input id="searchbar" name="search" type="search" placeholder="Search friends..." data-ng-model="headerVM.search">
+      <button>Search</button>
+    </form>
+  </div>
+  </header>
+
+
+   <!-- BODY CONTENT-->
+   <div id="body">
+     <div id="tableRow">
+       <!-- FRIENDS LIST-->
+       <div id="LeftColumn">
+         <h3>Users List </h3>
+
+         <ul>
+            <li data-ng-repeat="user in newFriendsVM.userslist | orderBy:'username'">
+            	<a href="" data-ng-click="newFriendsVM.functions.loadUser(user)">
+            	<img class="userico" data-ng-src="{{user.image}}" alt="">
+              	<h4>{{user.name}} (@{{user.username}})</h4></a>
+            </li>
+         </ul>
+       </div>
+       <div id="RightColumn">
+         <!-- ADVANCED SEARCH-->
+         <div class="box" id="AdvancedSearch">
+         	<h3>Advanced Search</h3>
+           <form data-ng-submit="newFriendsVM.functions.readNotFriends();">
+        	<p><span>Name: </span><input type="text" name="name" data-ng-model="newFriendsVM.name" placeholder="Name to search"></p>
+        	<p><span>Username: </span><input type="text" name="username" data-ng-model="newFriendsVM.username" placeholder="Username to search"></p>
+  			<p><span>Country: </span><input type="text" name="country" data-ng-model="newFriendsVM.country" placeholder="Country to search"></p>
+  			<p><span>City: </span><input type="text" name="city" data-ng-model="newFriendsVM.city" placeholder="City to search"></p>
+             <br>
+             <input type="submit" value="Search">
+ 			</form>
+         </div>
+         <div data-ng-show="newFriendsVM.user.idu!=undefined" class="box" id="infoBox">
+           <img class="userico2" src="{{newFriendsVM.user.image}}" alt="">
+          	<p><span>Name: </span>{{newFriendsVM.user.name}}</p>
+          	<p><span>Username: </span>{{newFriendsVM.user.username}}</p>
+        <p><span>Country: </span>{{newFriendsVM.user.country}}</p>
+        <p><span>City: </span>{{newFriendsVM.user.city}}</p>
+
+           <form data-ng-submit="newFriendsVM.functions.sendPetition()">
+           	<input type="submit" name="actbutton" value="Add Friend">
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!--  LOWER BAR -->
+<!--    <footer>
+      <p> Information about us</p>
+    </footer> -->
+ </body>

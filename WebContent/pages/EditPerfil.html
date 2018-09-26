@@ -1,0 +1,49 @@
+ <body>
+
+   <header>
+     <div class="logoname">
+         <img class="logo" src="../images/myfavicon.png" alt="">
+         <h1 class="name">RedNotes</h1>
+     </div>
+   </header>
+
+
+   <!-- BODY CONTENT-->
+	<div id="body" >
+		<img class="userico2" data-ng-src="{{perfilVM.userlogin.image}}" alt="">
+		<h3>Personal information</h3>
+		<!--<c:forEach var="error" items="${messages}">
+       		<p>${error}</p>
+       	</c:forEach>-->
+     <form data-ng-submit="perfilVM.functions.editPerfil()">
+       <p><span>Name: </span><input type="text" name="name" placeholder="Your name" data-ng-model="perfilVM.userlogin.name" value="{{perfilVM.userlogin.name}}"></p>
+ 			<p><span>Country: </span><input type="text" name="country" placeholder="Your country" data-ng-model="perfilVM.userlogin.country" value="{{perfilVM.userlogin.country}}"></p>
+ 			<p><span>City: </span><input type="text" name="city" placeholder="Your city" data-ng-model="perfilVM.userlogin.city" value="{{perfilVM.userlogin.city}}"></p>
+ 			<p><span>Age: </span><input type="number" name="age" placeholder="Your age"  data-ng-model="perfilVM.userlogin.age" value="{{perfilVM.userlogin.age}}"> </p>
+ 			<p><span>Telephone: </span><input type="tel" name="telephone" placeholder="Your telephone" data-ng-model="perfilVM.userlogin.telephone" value="{{perfilVM.userlogin.telephone}}"></p>
+  		<p><span>Email: </span><input type="email" name="email" placeholder="Your email" data-ng-model="perfilVM.userlogin.email" value="{{perfilVM.userlogin.email}}" required></p>
+
+
+ 			<p>If you want to change your password... </p>
+ 			<p><span>Actual Password: </span><input type="password" name="actualpas" data-ng-model="perfilVM.oldpas1"></p>
+ 			<p><span>New Password: </span><input type="password" name="newpas" data-ng-model="perfilVM.oldpas2"></p>
+ 			<p><span>Repeat New Password: </span><input type="password" name="newpas2" data-ng-model="perfilVM.newpas"></p>
+
+       <button type="submit">
+         <img title="Save changes" src="../images/save-ico.png" alt="Button for save changes">
+         <span> Save changes</span>
+         </button>
+     </form>
+     <a href="#!/perfil">
+       <button type="submit">
+         <img src="../images/delversion-ico.png" title="Cancel" alt="Button for cancel">
+ 				<span> Cancel</span>
+         </button>
+     </a>
+	</div>
+	<!--  LOWER BAR -->
+<!--    <footer>
+      <p> Information about us</p>
+    </footer> -->
+ </body>
+

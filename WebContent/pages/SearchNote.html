@@ -1,0 +1,81 @@
+
+  <body>
+   <!-- TOP BAR -->
+   <header data-ng-controller="headerCtrl as headerVM">
+     <!--MENU OF NAVEGATION-->
+     <nav>
+       <ul>
+         <li class="logoname">
+           <img class="logo" src="../images/myfavicon.png" alt="">
+           <h1 class="name">RedNotes</h1>
+         </li>
+         <li>
+           <h2><a href="#!/">Notes</a></h2>
+         </li>
+         <li>
+           <h2><a href="#!/reminders">Reminders</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/friends">Friends</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/petitions">Petitions</a></h2>
+         </li>
+       </ul>
+     </nav>
+     <!-- MENU OF PERFIL SETTINGS -->
+     <ul id="navPerfil">
+       <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+         <ul>
+           <li><a href="#!/perfil">View Perfil</a></li>
+           <li><a href="#!/editperfil">EditPerfil</a></li>
+           <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+         </ul>
+       </li>
+     </ul>
+	  <!-- SEARCH BAR -->
+	  <div class="searchbarDiv">
+	    <form data-ng-submit="headerVM.functions.searchNotes()">
+	      <input id="searchbar" name="search" type="search" placeholder="Search notes..." data-ng-model="headerVM.search">
+	      <button>Search</button>
+	    </form>
+	  </div>
+   </header>
+
+
+    <!-- BODY CONTENT-->
+    <div id="body" >
+      <h3> Notes </h3>
+
+          <div data-ng-repeat="note in notesVM.notes" class="note {{note.color}}">
+             <a data-ng-href="{{notesVM.link}}" data-ng-click="notesVM.functions.noteTypeLink(note.id,note.type)">
+               <h4>
+                <img src="../images/fij-ico.png" alt="">
+                <img data-ng-if="note.type==1" src="../images/list-ico.png">
+                 {{note.title}} </h4>
+               <p>
+               	<span data-ng-if="note.type==0">{{note.content}}</span>
+               	<span data-ng-if="note.type==1">(Enter to see the contents of the list)</span>
+               </p>
+             </a>
+             <a data-ng-href="#!/share/{{note.id}}">
+                  <img title="Share Note" src="../images/share-icon.png" alt="Button for share a note">
+                </a>
+             <ul class="optionsMenu">
+               <li><img src="../images/optionsNotes.png" alt="">
+                 <ul>
+                 	<li><a data-ng-href="#!/friends/{{note.owner}}">Property of: {{note.owner}}</a></li>
+                   	<li><a data-ng-href="" data-ng-click="notesVM.functions.archiveNote(note)">Archive Note</a></li>
+                   	<li><a data-ng-href="" data-ng-click="notesVM.functions.unpinnedNote(note)">Unpinned Note</a></li>
+                   <li><a data-ng-href="#!/editnote/{{note.id}}">Edit Note</a></li>
+                   <li><a data-ng-href="#!/deletenote/{{note.id}}">Delete Note</a></li>
+                 </ul>
+               </li>
+             </ul>
+           </div>
+    </div>
+    <!--  LOWER BAR -->
+<!--    <footer>
+      <p><a href="Information.html">Information about us</a></p>
+    </footer> -->
+

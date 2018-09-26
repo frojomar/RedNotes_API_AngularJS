@@ -1,0 +1,31 @@
+      <div>
+      <div class="box">
+
+        <h2> Register now in our web </h2>
+        <h3>{{registerVM.message}}</h3>
+        <form data-ng-submit="registerVM.functions.registerNewUser()">
+          <p>
+            Enter your username: <br>
+            <input type="text" name="username" placeholder="e.g. JavierR97" data-ng-model="registerVM.username" required>
+          </p>
+          <p>
+            Enter your e-mail: <br>
+            <input type="email" name="email" placeholder="12345@example.com" data-ng-model="registerVM.email" required>
+          </p>
+          <p>
+            Enter your password (Between 6 and 10 characters): <br>
+            <input type="password" name="password" placeholder="******" data-ng-model="registerVM.password" required>
+          </p>
+          <p>
+            Repeat password: <br>
+            <input type="password" name="password2" placeholder="******" data-ng-model="registerVM.passwordRepeat" required>
+          </p>
+          <div id="OKbutton">
+            <input type="submit" value="Registrarse">
+          </div>
+        </form>
+
+        <a href="../LoginServlet"> &lt; &lt; Return to Login page </a>
+	
+	</div>
+	</div>

@@ -1,0 +1,82 @@
+<body>
+<!-- TOP BAR -->
+ <header data-ng-controller="headerCtrl as headerVM">
+   <!--MENU OF NAVEGATION-->
+   <nav>
+     <ul>
+       <li class="logoname">
+         <img class="logo" src="../images/myfavicon.png" alt="">
+         <h1 class="name">RedNotes</h1>
+       </li>
+       <li>
+         <h2><a href="#!/">Notes</a></h2>
+       </li>
+       <li id="actualSelected">
+         <h2><a href="#!/reminders">Reminders</a></h2>
+       </li>
+       <li>
+           <h2><a href="#!/friends">Friends</a></h2>
+       </li>
+       <li>
+           <h2><a href="#!/petitions">Petitions</a></h2>
+       </li>
+     </ul>
+   </nav>
+   <!-- MENU OF PERFIL SETTINGS -->
+   <ul id="navPerfil">
+     <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+       <ul>
+         <li><a href="#!/perfil">View Perfil</a></li>
+         <li><a href="#!/editperfil">EditPerfil</a></li>
+         <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+       </ul>
+     </li>
+   </ul>
+   <!-- SEARCH BAR -->
+   <div class="searchbarDiv">
+     <form data-ng-submit="headerVM.functions.searchNotes()">
+       <input id="searchbar" name="search" type="search" placeholder="Search notes..." data-ng-model="headerVM.search">
+       <button>Search</button>
+     </form>
+   </div>
+ </header>
+
+  <!-- BODY CONTENT-->
+  <div id="body">
+    <div id="tableRow">
+      <!-- FRIENDS LIST-->
+      <div id="LeftColumn">
+        <h3>Notes List</h3>
+ <form method="get" action="javascript:history.back(1)">
+       <button type="submit">
+           <img class="goBack" src="../images/goback-icon.jpg" alt="Button for go back to Reminder">
+           <span> Go Back (Cancel)</span>
+         </button>
+     </form>
+        <ul>
+           <li data-ng-repeat="noteAvaliable in remindersVM.notes| orderBy:remindersVM.orderby" class="{{noteAvaliable.color}}-archived">
+             <a href="" data-ng-click="remindersVM.functions.selectNote(noteAvaliable)"><img class="userico" data-ng-src="{{noteAvaliable.imageOwner}}" alt="">
+             <h4>{{noteAvaliable.title}}</h4></a>
+           </li>
+        </ul>
+      </div>
+      <div id="RightColumn">
+        <!-- ADVANCED SEARCH-->
+         <div data-ng-show="remindersVM.note.id!=undefined" class="box {{remindersVM.note.color}}" id="infoBox">
+           <img class="userico2" data-ng-src="{{remindersVM.note.imageOwner}}" alt="">
+          	<p><span>Title Note: </span>{{remindersVM.note.title}}</p>
+
+           <form data-ng-submit="remindersVM.functions.addReminder()">
+           	<input type="datetime-local" name="date" data-ng-model="remindersVM.reminder.dateString" required>
+           	<input type="text" name="description" data-ng-model="remindersVM.reminder.description" >
+           	<input type="submit" name="confirm" value="Add Reminder">
+         </form>
+         </div>
+   </div>
+    </div>
+  </div>
+  <!--  LOWER BAR -->
+<!--    <footer>
+      <p> Information about us</p>
+    </footer> -->
+</body>

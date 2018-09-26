@@ -1,0 +1,133 @@
+ <body>
+<link rel="stylesheet"  href="../css/friends.css"/>
+   <!-- TOP BAR -->
+   <header data-ng-controller="headerCtrl as headerVM">
+     <!--MENU OF NAVEGATION-->
+     <nav>
+       <ul>
+         <li class="logoname">
+           <img class="logo" src="../images/myfavicon.png" alt="">
+           <h1 class="name">RedNotes</h1>
+         </li>
+         <li>
+           <h2><a href="#!/">Notes</a></h2>
+         </li>
+         <li>
+           <h2><a href="#!/reminders">Reminders</a></h2>
+         </li>
+         <li id="actualSelected">
+             <h2><a href="#!/friends">Friends</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/petitions">Petitions</a></h2>
+         </li>
+       </ul>
+     </nav>
+     <!-- MENU OF PERFIL SETTINGS -->
+     <ul id="navPerfil">
+       <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+         <ul>
+           <li><a href="#!/perfil">View Perfil</a></li>
+           <li><a href="#!/editperfil">EditPerfil</a></li>
+           <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+         </ul>
+       </li>
+     </ul>
+	  <!-- SEARCH BAR -->
+	  <div class="searchbarDiv">
+	    <form data-ng-submit="headerVM.functions.searchFriends()">
+	      <input id="searchbar" name="search" type="search" placeholder="Search friends..." data-ng-model="headerVM.search">
+	      <button>Search</button>
+	    </form>
+	  </div>
+   </header>
+
+   <!-- BODY CONTENT-->
+   <div id="body">
+     <div id="tableRow">
+       <!-- FRIENDS LIST-->
+       <div id="LeftColumn">
+         <h3>Friends List </h3>
+
+         <ul>
+           <li>
+             <div id="options">
+               <p>Order friends by: </p>
+               <form>
+                 <input type="radio" name="friendsorderby" value='username' data-ng-model="friendsVM.orderby">Username<br>
+                 <input type="radio" name="friendsorderby" value='dateFriendship' data-ng-model="friendsVM.orderby">Date of friendship<br>
+               </form>
+             </div>
+           </li>
+            <li data-ng-repeat="friend in friendsVM.friendslist | orderBy:friendsVM.orderby">
+            <a href="" data-ng-click="friendsVM.functions.loadFriend(friend.idu)"><img class="userico" data-ng-src="{{friend.image}}" alt="">
+              <h4>{{friend.name}} (@{{friend.username}})</h4></a>
+              <ul class="optionsMenu">
+                <li><img src="../images/optionsNotes.png" alt="">
+                  <ul>
+                    <li><a href="" data-ng-click="friendsVM.functions.loadFriend(friend.idu)">View Friend</a></li>
+                    <li><a data-ng-href="#!/deletefriend/{{friend.idu}}">Delete Friend</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+         </ul>
+       </div>
+       <div id="RightColumn">
+         <!-- INFO PERSON -->
+         <a href="#!/addfriend">
+           <div class="box" id="addFriend"> <img src="../images/add.svg" alt="">
+             <p>Add Friend</p>
+           </div>
+         </a>
+          <div data-ng-show="friendsVM.friend.idu!=undefined"class="box" id="infoBox">
+            <img class="userico2" data-ng-src="{{friendsVM.friend.image}}" alt="">
+            <h3>Personal information</h3>
+            <p><span>Name: </span>{{friendsVM.friend.name}}</p>
+            <p><span>Country: </span>{{friendsVM.friend.country}}</p>
+            <p><span>City: </span>{{friendsVM.friend.city}}</p>
+            <p><span>Age: </span>{{friendsVM.friend.age}} </p>
+            <p><span>Telephone: </span>{{friendsVM.friend.telephone}}</p>
+            <br>
+            <p><span>Email: </span>{{friendsVM.friend.email}}</p>
+            <p><span>Username: </span>@{{friendsVM.friend.username}}</p>
+            <p><span>Date of friendship: </span>{{friendsVM.friend.dateString | date:'MM/dd/yyyy h:mma'}} </p>
+
+            <h3>Shared notes</h3>
+
+	            <div data-ng-repeat="note in friendsVM.notes" class="note {{note.color}}">
+		             <a data-ng-href="{{friendsVM.link}}" data-ng-click="friendsVM.functions.noteTypeLink(note.id,note.type)">
+		               <h4>
+		                <img data-ng-if="note.type==1" src="../images/list-ico.png">
+		                 {{note.title}} </h4>
+		               <p>
+		               	<span data-ng-if="note.type==0">{{note.content}}</span>
+		               	<span data-ng-if="note.type==1">(Enter to see the contents of the list)</span>
+		               </p>
+		             </a>
+		             <a data-ng-href="#!/share/{{note.id}}">
+		                  <img title="Share Note" src="../images/share-icon.png" alt="Button for share a note">
+		                </a>
+		             <ul class="optionsMenu">
+		               <li><img src="../images/optionsNotes.png" alt="">
+		                 <ul>
+		                 	<li><a data-ng-href="#!/friends/{{note.ownerID}}">Property of: {{note.owner}}</a></li>
+		                   	<li><a data-ng-href="#!/editnote/{{note.id}}">Edit Note</a></li>
+		                   	<li><a data-ng-href="#!/deletenote/{{note.id}}">Delete Note</a></li>
+		                 </ul>
+		               </li>
+		             </ul>
+		           </div>
+
+            <a class="deleteButton"  href="#!/deletefriend/{{friendsVM.friend.idu}}">
+              <img src="../images/del-ico.png" alt="Delete Friend Button">
+            </a>
+          </div>
+       </div>
+     </div>
+   </div>
+   <!--  LOWER BAR -->
+<!--    <footer>
+      <p> Information about us</p>
+    </footer> -->
+ </body>

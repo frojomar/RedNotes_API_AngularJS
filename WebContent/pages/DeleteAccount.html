@@ -1,0 +1,25 @@
+  <body>
+    <header>
+        <div class="logoname">
+          <img class="logo" src="../images/myfavicon.png" alt="">
+          <h1 class="name">RedNotes</h1>
+        </div>
+    </header>
+
+    <div class="content">
+      <div class="box" id="regcompleted">
+          <h1> Are you sure you want to delete your account? <br>
+          "@{{perfilVM.userlogin.username}}"</h1>
+          <img class="userico2" src="../images/persona.jpg" alt="">
+          <p>	<span data-ng-if="perfilVM.userlogin.name!=''">"{{perfilVM.userlogin.name}}(@{{perfilVM.userlogin.username}})"</span>
+               	<span data-ng-if="perfilVM.userlogin.name==''">"@{{perfilVM.userlogin.username}}"</span></p>
+
+          <form >
+            <input type="submit" name="confirm" value="Yes, I am sure" data-ng-click="perfilVM.functions.deleteAccountAction(1)">
+            <input type="submit" name="confirm" value="No, I don't want to delete it." data-ng-click="perfilVM.functions.deleteAccountAction(0)">
+          </form>
+
+          <h3><a href="#!/perfil"> Go back </a></h3>
+      </div>
+    </div>
+  </body>

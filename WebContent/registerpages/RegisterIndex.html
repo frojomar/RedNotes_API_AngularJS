@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="registerApp">
+
+  <head>
+    <meta charset="utf-8">
+    <title> RedNotes-Register Page </title>
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/reglogin.css">
+    <link rel="icon" type="image/png" href="../images/myfavicon.png">
+    
+<!-- Include the AngularJS library -->
+    <script src="../js/angular/angular.js"></script>
+	<script src="../js/angular/angular-route.js"></script>
+<!-- Modules -->
+    <script src="../js/registerApp.js"></script>
+    <script src="../js/registerFactories/registerFactory.js"></script>
+    <script src="../js/registerControllers/registerCtrl.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <div class="logoname">
+        <a href="../LoginServlet">
+          <img class="logo" src="../images/myfavicon.png" alt="">
+          <h1 class="name">RedNotes</h1>
+        </a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div data-ng-view></div>
+    </div>
+
+  <!--
+    <footer>
+      <p> Information about us</p>
+    </footer> -->
+
+  </body>
+
+
+</html>

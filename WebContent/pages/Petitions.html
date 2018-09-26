@@ -1,0 +1,86 @@
+<body>
+
+ <!-- TOP BAR -->
+   <header data-ng-controller="headerCtrl as headerVM">
+     <!--MENU OF NAVEGATION-->
+     <nav>
+       <ul>
+         <li class="logoname">
+           <img class="logo" src="../images/myfavicon.png" alt="">
+           <h1 class="name">RedNotes</h1>
+         </li>
+         <li >
+           <h2><a href="#!/">Notes</a></h2>
+         </li>
+         <li>
+           <h2><a href="#!/reminders">Reminders</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/friends">Friends</a></h2>
+         </li>
+         <li id="actualSelected">
+             <h2><a href="#!/petitions">Petitions</a></h2>
+         </li>
+       </ul>
+     </nav>
+     <!-- MENU OF PERFIL SETTINGS -->
+     <ul id="navPerfil">
+       <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+         <ul>
+           <li><a href="#!/perfil">View Perfil</a></li>
+           <li><a href="#!/editperfil">EditPerfil</a></li>
+           <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+         </ul>
+       </li>
+     </ul>
+     <!-- SEARCH BAR -->
+     <div class="searchbarDiv">
+       <form data-ng-submit="headerVM.functions.searchFriends()">
+         <input id="searchbar" name="search" type="search" placeholder="Search friends..." data-ng-model="headerVM.search">
+         <button>Search</button>
+       </form>
+     </div>
+   </header>
+
+   <!-- BODY CONTENT-->
+   <div id="body">
+     <div id="tableRow">
+       <!-- LIST OF PETITIONS SENT-->
+       <div id="LeftColumn" class="petitionList">
+         <h3>Petitions sent</h3>
+
+         <ul>
+            <li data-ng-repeat="petition in newFriendsVM.petitionsent| orderBy:'dateFriendship'" class="petition">
+              <img class="userico" data-ng-src="{{petition.image}}" alt="">
+              <h4>{{petition.name}} (@{{petition.username}})</h4>
+               <form data-ng-submit="newFriendsVM.functions.deletePetition(petition)">
+                 <input type="submit" name="actbutton" value="Delete">
+               </form>
+            </li>
+         </ul>
+       </div>
+       <!-- LIST OF PETITIONS RECEIVED-->
+       <div id="LeftColumn" class="petitionList">
+         <h3>Petitions received</h3>
+
+         <ul>
+            <li data-ng-repeat="petition in newFriendsVM.petitionreceived| orderBy:'dateFriendship'" class="petition">
+              <img class="userico" data-ng-src="{{petition.image}}" alt="">
+              <h4>{{petition.name}} (@{{petition.username}})</h4>
+			  <form data-ng-submit="newFriendsVM.functions.confirmPetition(petition)">
+                 <input type="submit" name="actbutton" value="Confirm">
+               </form>
+               <form data-ng-submit="newFriendsVM.functions.deletePetition(petition)">
+                 <input type="submit" name="actbutton" value="Delete">
+               </form>
+            </li>
+         </ul>
+       </div>
+     </div>
+   </div>
+   <!--  LOWER BAR -->
+<!--    <footer>
+      <p> Information about us</p>
+    </footer> -->
+ </body>
+

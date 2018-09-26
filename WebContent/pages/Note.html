@@ -1,0 +1,130 @@
+ <body>
+   <link rel="stylesheet" type="text/css" href="../css/note.css">
+
+  <!-- TOP BAR -->
+   <header data-ng-controller="headerCtrl as headerVM">
+     <!--MENU OF NAVEGATION-->
+     <nav>
+       <ul>
+         <li class="logoname">
+           <img class="logo" src="../images/myfavicon.png" alt="">
+           <h1 class="name">RedNotes</h1>
+         </li>
+         <li>
+           <h2><a href="#!/">Notes</a></h2>
+         </li>
+         <li>
+           <h2><a href="#!/reminders">Reminders</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/friends">Friends</a></h2>
+         </li>
+         <li>
+             <h2><a href="#!/petitions">Petitions</a></h2>
+         </li>
+       </ul>
+     </nav>
+     <!-- MENU OF PERFIL SETTINGS -->
+     <ul id="navPerfil">
+       <li><a href="#!/perfil"><img class="userico" data-ng-src="{{headerVM.user.image}}" alt=""><span> {{headerVM.user.username}} </span></a>
+         <ul>
+           <li><a href="#!/perfil">View Perfil</a></li>
+           <li><a href="#!/editperfil">EditPerfil</a></li>
+           <li><a href="../LoginServlet?disconnect=true">Log out</a></li>
+         </ul>
+       </li>
+     </ul>
+     <!-- SEARCH BAR -->
+     <div class="searchbarDiv">
+       <form data-ng-submit="headerVM.functions.searchNotes()">
+         <input id="searchbar" name="search" type="search" placeholder="Search notes..." data-ng-model="notesVM.search">
+         <button>Search</button>
+       </form>
+     </div>
+   </header>
+
+	<!-- BODY CONTENT-->
+   <div id="body" >
+       <!-- VERSIONS LIST-->
+       <div id="LeftColumn">
+         <h3>Versions Control</h3>
+         <ul>
+            <li data-ng-repeat="version in noteVM.listversions | orderBy:'modificationDate'" data-ng-class="{'{{noteVM.note.color}}' : version.modificationDate==noteVM.note.modificationDate,'{{noteVM.note.color}}-archived' : version.modificationDate!=noteVM.note.modificationDate }"><div class="linksArchived">
+              <img class="userico" data-ng-src="{{version.imageOwner}}" title="{{version.owner}}" alt="">
+              <a class="noteLink" href="" data-ng-click="noteVM.functions.loadVersion(version.idn,version.modificationDate)"><h4>[{{version.dateString | date:'MM/dd/yyyy h:mma'}}] {{version.title}}</h4></a>
+              </div>
+              <ul class="optionsMenu">
+                <li><img src="../images/optionsNotes.png" alt="">
+                  <ul>
+                    <li><a href="" data-ng-click="noteVM.functions.loadVersion(version.idn,version.modificationDate)">View version</a></li>
+                    <li><a href="" data-ng-click="noteVM.functions.changeVersion(version.idn,version.modificationDate)">Set version as definitive</a></li>
+                    <li><a href="" data-ng-click="noteVM.functions.deleteVersion(version.idn,version.modificationDate)">Delete Version</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+         </ul>
+       </div>
+       <!-- NOTES -->
+       <div id="RightColumn">
+         <h3>{{noteVM.note.title}} [{{noteVM.note.dateString | date:'MM/dd/yyyy h:mma'}}]</h3>
+           <div class="note {{noteVM.note.color}}">
+           	<a href="#!/friends/{{noteVM.note.ownerID}}"><img class="userico" title="{{noteVM.note.owner}}" data-ng-src="{{noteVM.note.imageOwner}}" alt=""></a>
+               <h4>{{noteVM.note.title}}</h4>
+			<p>{{noteVM.note.content}}</p>
+             <ul id="options">
+               <li><a href="#!/deletenote/{{noteVM.note.id}}">
+                 <img title="Delete Note" src="../images/del-ico.png" alt="Button for delete the note">
+               </a></li>
+
+			<!--principalOptions-->
+			<div class="optionsGroup">
+			  <li><a href="#!/share/{{noteVM.note.id}}">
+                   <img title="Share Note" src="../images/share-icon.png" alt="Button for share a note">
+                 </a></li>
+                 
+          	<li data-ng-if="noteVM.note.archived==0"><a data-ng-href="" data-ng-click="noteVM.functions.archiveNote()">
+          		<img title="Archive Note" src="../images/archive-ico.png" alt="Button for archive note">
+          	</a></li>
+          	<li data-ng-if="noteVM.note.archived==1"><a data-ng-href="" data-ng-click="noteVM.functions.unarchiveNote()">
+			    <img title="Unarchive Note" src="../images/archive2-ico.png" alt="Button for unarchive note">
+          	</a></li>
+          	<li data-ng-if="noteVM.note.pinned==0"><a data-ng-href="" data-ng-click="noteVM.functions.pinnedNote()">
+          		<img title="Pinned Note" src="../images/fij-ico.png" alt="Button for pinned a note">
+          	</a></li>
+          	<li data-ng-if="noteVM.note.pinned==1"><a data-ng-href="" data-ng-click="noteVM.functions.unpinnedNote()">
+          		<img title="Unpinned Note" src="../images/fij2-ico.png" alt="Button for unpinned a note">
+          	</a></li>			         	
+							</div>
+							<!--optionsEdit-->
+							<div class="optionsGroup">
+								<li><a href="#!/editnote/{{noteVM.note.id}}">
+                   <img title="Edit Note" src="../images/edit-ico2.png" alt="Button for edit note">
+                 </a></li>
+				<li>
+                   <ul class="optionsMenu">
+                     <li><img title="Choose color" src="../images/colorpicker-ico.png" alt="Button for select color of note">
+                       	<ul>
+                    		<li><a href="" data-ng-click="noteVM.functions.updateColor('red')">Red</a></li>
+                    		<li><a href="" data-ng-click="noteVM.functions.updateColor('blue')">Blue</a></li>
+                    		<li><a href="" data-ng-click="noteVM.functions.updateColor('green')">Green</a></li>
+                    		<li><a href="" data-ng-click="noteVM.functions.updateColor('yellow')">Yellow</a></li>
+                    		<li><a href="" data-ng-click="noteVM.functions.updateColor('orange')">Orange</a></li>
+                  		</ul>
+                     </li>
+                   </ul>
+
+                </li>
+			</div>
+			<!--controlVersionOptions-->
+			<div class="optionsGroup">
+                 <li><a href="" data-ng-click="noteVM.functions.readNote()">
+                   <img title="Go to actual version" src="../images/actualversion-ico.png" alt="Button for go to the actual version of the note">
+                 </a></li>
+			</div>
+             </ul>
+           </div>
+       </div>
+     </div>
+
+</body>

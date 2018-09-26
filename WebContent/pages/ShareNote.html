@@ -1,0 +1,34 @@
+ <body>
+
+   <header>
+     <div class="logoname">	
+         <img class="logo" src="../images/myfavicon.png" alt="">
+         <h1 class="name">RedNotes</h1>
+     </div>
+   </header>
+
+   <!-- BODY CONTENT-->
+   <div id="body">
+     <div id="tableRow">
+       <!-- LIST OF FRIENDS-->
+       <div id="LeftColumn" class="friendsList">
+         <h3>Available friends to share the note</h3>
+		     <a href="#!/">
+		       <button type="submit">
+		           <img class="goBack" src="../images/goback-icon.jpg" alt="Button for go back to perfil">
+		           <span> Go Back (Cancel)</span>
+		         </button>
+		     </a>
+         <ul>
+            <li data-ng-repeat="friend in friendsVM.friendslist" class="petition">
+              <img class="userico" data-ng-src="{{friend.image}}" alt="">
+              <h4>{{friend.name}} (@{{friend.username}})</h4>
+               <form data-ng-submit="friendsVM.functions.shareNote(friend)">
+                 <input type="submit" name="actbutton" value="Share">
+ 	    		</form>                
+            </li>
+         </ul>
+       </div>
+     </div>
+   </div>
+ </body>
