@@ -1,0 +1,82 @@
+#RightColumn{
+	width: 20%;
+}
+
+#RightColumn #box{
+	position: relative;
+}
+
+#addNote, #addList{
+	text-align: center;
+
+}
+
+#addNote p, #addList p{
+	display: inline;
+}
+
+#CenterColumn{
+	padding: 5px;
+	text-align:center;
+}
+
+#LeftColumn > ul{
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+}
+
+h3{
+	padding: 5px;
+	font-size: 24px;
+}
+
+#LeftColumn > ul > li {
+
+	display: inline-flex;
+	margin: 1px 0px 1px 0px;
+
+	border-left-width: 3px;
+	border-left-style: solid;
+
+	padding:10px;
+	height: auto;
+	min-height: 30px;
+
+	align-items: center;
+}
+#LeftColumn .linksArchived{
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+}
+
+#LeftColumn .linksArchived .noteLink{
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+}
+
+#RightColumn p{
+	font-weight: bold;
+}
+
+
+
+.optionsMenu form, .optionsMenu input{
+	width:100%;
+}
+
+.optionsMenu input{
+	background: grey;
+}
+/**************************************/
+/*////////////FOR NOTES SEARCH///////*/
+/*************************************/
+
+#SearchColumn{
+	width:75%;
+}

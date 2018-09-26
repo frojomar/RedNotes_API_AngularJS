@@ -1,0 +1,176 @@
+
+/**********************************************/
+/***************COLUMN DISTRIBUTION************/
+/**********************************************/
+
+#body{
+  top: 10%;
+
+  width: 100%;
+  height: 90%;
+
+}
+#LeftColumn{
+  display: block;
+  float:left;
+
+  top:10%;
+
+  width: 30%;
+  height: 100%;
+}
+
+#RightColumn{
+  display: block;
+  float: right;
+  width:70%;
+  height: 100%;
+}
+/***************END***************************/
+
+/*SIZE OF TITLES*/
+#LeftColumn>h3, #RightColumn>h3{
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+
+/**********************************************/
+/***************LEFT COLUMN********************/
+/**********************************************/
+
+#LeftColumn > ul{
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+}
+
+#LeftColumn > ul > li {
+
+	display: inline-flex;
+	margin: 1px 0px 1px 0px;
+
+	border-left-width: 3px;
+	border-left-style: solid;
+
+	padding:10px;
+	height: auto;
+	min-height: 30px;
+
+	align-items: center;
+}
+#LeftColumn .linksArchived{
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+}
+
+#LeftColumn .linksArchived .noteLink{
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+}
+
+
+/**********************************************/
+/**************RIGHT COLUMN********************/
+/**********************************************/
+
+.note{
+
+  position: absolute;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 94%;
+  height: 80%;
+}
+
+.note>a{
+	margin:10px 10px 0 0;
+	float:right;
+}
+
+.note h4{
+  width: 100%;
+  height: 8%;
+  margin: 10px 0 10px 0 ;
+  text-align: center;
+  font-size: 24px;
+}
+
+.note #options{
+  list-style: none;
+}
+
+.optionsGroup{
+  display: inline-block;
+  margin: 20px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 thin 0 thin;
+}
+
+#options > li{
+  display: inline-block;
+  padding: 10px;
+}
+
+.optionsGroup > li{
+  display: inline-block;
+  padding: 10px;
+}
+
+
+.note p, #list{
+  width: 96%;
+  height: 70%;
+  margin: 0;
+  margin:2%;
+  overflow-y: scroll;
+
+}
+
+.note form{
+	width: 100%;
+	height: 100%;
+}
+
+.note #form{
+  width: 96%;
+  height: 70%;
+  margin: 0;
+  margin:2%;
+  overflow-y: scroll;
+}
+
+.note form textarea{
+  vertical-align:top;
+  width: 100%;
+  height: 100%;
+}
+
+.note .sharedIcon{
+	float:right;
+}
+
+#colorSelector input {
+    background: #bdbdbd;
+    width: 100%;
+}
+
+
+#addItem, #deleteItem{
+	text-align: center;
+
+}
+
+#addItem p, #deleteItem p{
+	display: inline;
+}
+
+.optionsGroup button{
+	background:none;
+}

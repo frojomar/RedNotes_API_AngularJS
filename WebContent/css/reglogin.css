@@ -1,0 +1,80 @@
+
+body{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border:0;
+}
+
+
+
+.box, .logoname{
+
+  	width: 350px;
+  	margin-left: auto;
+  	margin-right: auto;
+
+  	vertical-align: middle;
+
+}
+
+.logoname{
+	text-align: center;
+}
+
+.name{
+	color:black;
+}
+
+.box{
+	margin-top: 3px;
+	padding: 20px;
+}
+
+.box a{
+	  text-decoration:underline;
+	  color:var(--color-register-links);
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 300px;
+    margin-top: -150px;
+}
+
+input{
+	margin: 3px;
+}
+#buttons{
+	text-align: center;
+}
+
+.logo{
+	vertical-align: middle;
+}
+
+
+/**SPECIFIC TO RegisterCompleted.html**/
+
+#registerlink{
+	text-align: center;
+}
+
+#regcompleted{
+	text-align: center;
+	height: auto;
+}
+
+/**SPECIFIC TO Register.html**/
+
+.content .box h2, #OKbutton{
+	text-align: center;
+}
+
+.content .box h2, #OKbutton{
+	padding-bottom: 10px;
+}

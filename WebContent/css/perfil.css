@@ -1,0 +1,57 @@
+#body{
+  display: block;
+  padding: 100px;
+  width: calc(100% - 200px);
+}
+
+h3{
+  font-size: 38px;
+}
+
+p{
+  font-size: 24px;
+}
+
+span{
+  font-weight: bold;
+}
+
+.userico2{
+  width: 400px;
+  height: 400px;
+}
+
+button{
+  float:right;
+}
+
+#ImageTable button {
+	width: 200px;
+	height:200px;
+}
+
+#ImageTable button, #ImageTable button img{
+	float: none;
+	display:inline-block;
+	padding:0;
+	margin:0;
+	border-radius: 5px;
+}
+
+#ImageTable button{
+	margin:5px;
+}
+
+#ImageTable button img{
+	width: 198px;
+	height:198px;
+	border:2px var(--backgroundHeader-color) solid;
+}
+
+
+
+#ImageTable button img#ImageSelected{
+	width: 195px;
+	height:195px;
+	border:5px var(--actual-selected-separator) solid;
+}

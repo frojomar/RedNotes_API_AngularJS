@@ -1,0 +1,43 @@
+.userico2{
+  float:none;
+  padding: 10px;
+}
+
+.box{
+  width: 500px;
+}
+
+.box p{
+  font-size: 18px;
+}
+
+input{
+  width: 200px;
+  height: 100px;
+  background-color: var(--color-input-button);
+  border-radius: 30px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+}
+
+.content{
+  height: 600px;
+  margin-top: -300px;
+}
+
+.note{
+  text-align: left;
+
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+
+	padding: 10px;
+	margin: 5px;
+}
+
+.note p{
+  font-size: 14px;
+}

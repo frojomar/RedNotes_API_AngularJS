@@ -1,0 +1,608 @@
+/*//////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
+/*/////////////////PALETTE 1//////////////////////////////////////////*/
+:root{
+
+  /*principal font color*/
+  --font-color: #212121;
+
+  /*principal links color*/
+  --links-color: black;
+
+  /*background body color*/
+  --background-color: #FFECB3;
+
+  /*header colors*/
+  --backgroundHeader-color:#333;
+  --header-color:white;
+  --separator-header-perfil:rgba(255, 4, 0, 0.14);
+  --actual-selected-separator:rgb(176, 125, 37);
+
+  /*box color*/
+  --box-color:#FFC107;
+
+  /*background of lists*/
+  --background-list-color:rgba(255, 160, 0, 0.34);
+
+  /*colors of notes not archived and border of archived*/
+  --color-note-yellow-primary:rgb(255, 231, 73);
+  --color-note-blue-primary: rgb(74, 79, 248);
+  --color-note-green-primary: rgb(93, 255, 73);
+  --color-note-red-primary: rgb(185, 52, 52);
+  --color-note-orange-primary: rgb(255, 106, 0);
+  --color-note-default:#FF5722;
+
+  /*colors of notes archived*/
+  --color-note-yellow-light:rgba(255, 231, 73, 0.58);
+  --color-note-blue-light:rgba(74, 79, 248, 0.58);
+  --color-note-green-light: rgba(93, 255, 73, 0.58);
+  --color-note-red-light:rgba(185, 52, 52, 0.58);
+  --color-note-orange-light: rgba(255, 106, 0, 0.79);
+
+  /*var to save color of proncipal input button (delete page,...)*/
+  --color-input-button: #FFA000;
+
+  /*colors to tuples of friends page*/
+  --color-friend-tuple-light:rgba(255, 193, 6, 0.6);
+  --color-friend-tuple:#FFA000;
+  --color-friend-info:rgba(216, 187, 101, 1);
+
+
+  /*color of link in register and login*/
+  --color-register-links:#FF5722;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
+/*/////////////////PALETTE 3//////////////////////////////////////////*/
+:root {
+    --font-color: #212121;
+    --links-color: black;
+    --background-color: rgba(234, 228, 207, 0.94);
+    --backgroundHeader-color: #06081b;
+    --header-color: white;
+    --separator-header-perfil: rgba(255, 4, 0, 0.14);
+   /* --actual-selected-separator: rgba(255, 4, 0, 0.35);*/
+    --actual-selected-separator: rgba(255, 4, 0, 0.5);
+    --box-color: rgba(83, 107, 220, 0.86);
+    --background-list-color: rgba(85, 74, 248, 0.34);
+    --color-note-yellow-primary: rgb(255, 231, 73);
+    --color-note-blue-primary: rgb(74, 79, 248);
+    --color-note-green-primary: rgb(93, 255, 73);
+    --color-note-red-primary: rgb(185, 52, 52);
+    --color-note-orange-primary: rgb(255, 106, 0);
+    --color-note-default: #FF5722;
+    --color-note-yellow-light: rgba(255, 231, 73, 0.58);
+    --color-note-blue-light: rgba(74, 79, 248, 0.58);
+    --color-note-green-light: rgba(93, 255, 73, 0.58);
+    --color-note-red-light: rgba(185, 52, 52, 0.58);
+    --color-note-orange-light: rgba(255, 106, 0, 0.79);
+    --color-input-button: #FFA000;
+    --color-friend-tuple-light: rgba(255, 193, 6, 0.6);
+    --color-friend-tuple: #FFA000;
+    --color-friend-info: rgba(216, 187, 101, 1);
+    --color-register-links: #FF5722;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
+/*/////////////////PALETTE 2//////////////////////////////////////////*/
+:root {
+    --font-color: #212121;
+    --links-color: black;
+    --background-color: rgba(234, 228, 207, 0.94);
+    --backgroundHeader-color: #333;
+    --header-color: white;
+    --separator-header-perfil: rgba(255, 4, 0, 0.14);
+    --actual-selected-separator: rgba(255, 4, 0, 0.35);
+    --box-color: rgba(105, 105, 105, 0.56);
+    --background-list-color: rgba(101, 92, 77, 0.34);
+    --color-note-yellow-primary: rgb(255, 231, 73);
+    --color-note-blue-primary: rgb(74, 79, 248);
+    --color-note-green-primary: rgb(93, 255, 73);
+    --color-note-red-primary: rgb(185, 52, 52);
+    --color-note-orange-primary: rgb(255, 106, 0);
+    --color-note-default: #FF5722;
+    --color-note-yellow-light: rgba(255, 231, 73, 0.58);
+    --color-note-blue-light: rgba(74, 79, 248, 0.58);
+    --color-note-green-light: rgba(93, 255, 73, 0.58);
+    --color-note-red-light: rgba(185, 52, 52, 0.58);
+    --color-note-orange-light: rgba(255, 106, 0, 0.79);
+    --color-input-button: #FFA000;
+    --color-friend-tuple-light: rgba(255, 193, 6, 0.6);
+    --color-friend-tuple: #FFA000;
+    --color-friend-info: rgba(216, 187, 101, 1);
+    --color-register-links: #FF5722;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
+/*/////////////////PALETTE 4//////////////////////////////////////////*/
+:root {
+    --font-color: #212121;
+    --links-color: black;
+    --background-color: rgba(234, 228, 207, 0.94);
+    --backgroundHeader-color: #333;
+    --header-color: white;
+    --separator-header-perfil: rgba(255, 4, 0, 0.14);
+    --actual-selected-separator: rgba(255, 4, 0, 0.35);
+    --box-color: rgba(105, 105, 105, 0.56);
+    --background-list-color: rgba(101, 92, 77, 0.34);
+    --color-note-yellow-primary: rgb(255, 245, 157);
+    --color-note-blue-primary: rgb(144, 202, 249);
+    --color-note-green-primary: rgb(197, 224, 165);
+    --color-note-red-primary: rgb(238, 154, 154);
+    --color-note-orange-primary: rgb(255, 204, 128);
+    --color-note-default: #FFAB91;
+    --color-note-yellow-light: rgba(255, 245, 157, 0.6);
+    --color-note-blue-light: rgba(144, 202, 249, 0.6);
+    --color-note-green-light: rgba(197, 224, 165, 0.6);
+    --color-note-red-light: rgba(238, 154, 154, 0.6);
+    --color-note-orange-light: rgba(255, 204, 128, 0.6);
+    --color-input-button: #FFA000;
+    --color-friend-tuple-light: rgba(255, 193, 6, 0.6);
+    --color-friend-tuple: #FFA000;
+    --color-friend-info: rgba(216, 187, 101, 1);
+    --color-register-links: #FF5722;
+}
+
+
+
+body{
+  background-color: var(--background-color) ;
+  font-family:sans-serif, Arial, Helvetica;
+  font-size: 14px;
+  color: var(--font-color);
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+}
+
+a{
+  text-decoration:none;
+  color:var(--links-color);
+}
+
+button:hover{
+	cursor: pointer;	
+}
+.userico{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 100px;
+}
+
+.userico2{
+	width: 200px;
+	height: 200px;
+	float: right;
+	padding: 30px;
+	border-radius: 300px;
+}
+
+#body,header{
+  min-width: 1010px;
+  min-height: 80px;
+}
+
+#body{
+  display: table;
+  position: absolute;
+  top: 10%;
+  bottom: 0px;
+  right: 0px;
+  left:0px;
+
+  height: auto;
+  min-height: 87%;
+  width: 100%;
+
+}
+
+
+header{
+
+  background-color:var(--backgroundHeader-color);
+
+  width: 100%;
+  height:10%;
+
+  top:0;
+  right:0px;
+  left:0px;
+
+  color: var(--header-color);
+
+  z-index: 1;
+
+  position: absolute;
+  display: inline-block;
+
+
+}
+
+nav{
+  height: 100%;
+  display: inline-block;
+}
+nav>ul{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+nav>ul>li{
+  display: inline-flex;
+
+/*
+  border: medium solid var(--actual-selected-separator);
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;*/
+
+  padding: 4px;
+  margin:0;
+
+  height: calc(100% - 8px);
+  vertical-align: middle;
+
+  align-items: center;
+}
+nav>ul>li>h2{
+  color:var(--header-color);
+}
+
+nav>ul>li>h2>a{
+  width: 100%;
+  height: 100%;
+  color:var(--header-color);
+  font-size:16px;
+}
+
+#actualSelected>h2>a {
+  /*background-color:var(--actual-selected-separator);*/
+
+  color:var(--actual-selected-separator);
+  font-size: 20px;
+}
+
+.searchbarDiv{
+    max-width: 40%;
+    height: 100%;
+    display: inline-block;
+    min-width: 300px;
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+#navPerfil{
+
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  padding-right: 20px;
+}
+
+#navPerfil span{
+  color:var(--header-color);
+}
+
+.logoname{
+    padding: 0px 30px 0px 10px;
+}
+
+/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+**********************MENU OF PERFIL SETTINGS********************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+/*Remove list points*/
+#navPerfil, #navPerfil ul{
+  list-style:none;
+  padding-left: 3px;
+  width: max-content;
+  vertical-align: middle;
+}
+
+/*Color and decoration of submenu*/
+#navPerfil li ul li a{
+    background-color:grey;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+
+
+}
+
+span {
+    vertical-align: top;
+}
+
+/*Color and decoration of image perfil*/
+#navPerfil > li > a {
+  color:#050505;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  text-align: center;
+  width: auto;
+  border-left: medium solid var(--separator-header-perfil) ;
+}
+
+
+
+/*Color with the pointer over*/
+#navPerfil li ul li a:hover {
+  background-color:#434343;
+}
+
+/*Hide list*/
+#navPerfil li ul {
+  display:none;
+  position:absolute;
+}
+
+/*Show list*/
+#navPerfil li:hover > ul {
+  display:block;
+}
+
+
+
+/**********END*****************************/
+
+
+
+/***************************************/
+/********NOTES***********************/
+/**************************************/
+
+.note{
+  /*background color set in case the color class is not recognized */
+  background-color: var(--color-note-default);
+  border-radius: 10px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+
+	padding: 10px;
+	margin: 5px;
+}
+
+.note h4{
+  width: 100%;
+  height: 15%;
+  margin: 10px 0 10px 0 ;
+  text-align: center;
+}
+
+.note .optionsMenu{
+  margin:0;
+}
+
+.note p{
+  width: 96%;
+  height: 61%;
+  margin: 0;
+  margin:2%;
+  overflow-y: scroll;
+
+}
+
+.note .sharedIcon{
+	float:right;
+}
+
+/*color of notes*/
+.yellow{
+  background-color: var(--color-note-yellow-primary);
+}
+
+.blue{
+  background-color: var(--color-note-blue-primary);
+}
+
+.green{
+  background-color: var(--color-note-green-primary);
+}
+
+.red{
+  background-color: var(--color-note-red-primary);
+}
+
+.orange{
+  background-color: var(--color-note-orange-primary);
+}
+
+.yellow-archived{
+  border-left-color: var(--color-note-yellow-primary);
+  background-color: var(--color-note-yellow-light);
+}
+
+.blue-archived{
+  border-left-color: var(--color-note-blue-primary);
+  background-color: var(--color-note-blue-light);
+}
+
+.green-archived{
+  border-left-color: var(--color-note-green-primary);
+  background-color: var(--color-note-green-light);
+}
+
+.red-archived{
+  border-left-color: var(--color-note-red-primary);
+  background-color: var(--color-note-red-light);
+}
+
+.orange-archived{
+  border-left-color: var(--color-note-orange-primary);
+  background-color: var(--color-note-orange-light);
+}
+
+
+/******************************************/
+
+#tableRow{
+  display: table-row;
+}
+
+
+#LeftColumn, #RightColumn{
+  display: table-cell;
+    width: 25%;
+}
+
+#LeftColumn{
+
+  background-color: var(--background-list-color);
+
+  left: 0;
+
+  padding:0;
+
+  vertical-align: top;
+}
+
+#RightColumn{
+  /*border-left-width: thin;
+  border-left-style: solid;
+  border-left-color: rgb(176, 125, 37);*/
+  position: relative;
+}
+
+#CenterColumn{
+  display: table-cell;
+  vertical-align: top;
+}
+
+div > .cell {
+    vertical-align: top;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.name{
+  display: inline-block;
+  color:var(--header-color);
+}
+
+
+
+
+.box{
+  background-color: var(--box-color);
+
+  padding: 10px 10px 10px 10px;
+  margin: 30px 30px 30px 30px;
+
+  border: medium solid var(--box-color);
+  border-radius: 5px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.44);
+}
+
+/**This two for search bar**/
+.webdesigntuts-workshop{
+  width: 100%;
+}
+
+#searchbar{
+  width: 75%;
+}
+
+
+
+/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+**********************MENU OF OPTIONS****************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+
+/*Remove list points*/
+.optionsMenu, .optionsMenu ul{
+  list-style:none;
+  padding-left: 3px;
+  width: max-content;
+  z-index: 1;
+}
+
+
+/*Color and decoration of submenu*/
+.optionsMenu li ul li a{
+    background-color:grey;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+
+
+}
+
+span {
+    vertical-align: top;
+}
+
+/*Color and decoration of image perfil*/
+.optionsMenu > li > a {
+  color:#050505;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  text-align: center;
+  width: auto;
+  border-left: medium solid var(--separator-header-perfil) ;
+}
+
+
+
+/*Color with the pointer over*/
+.optionsMenu li ul li a:hover {
+  background-color:#434343;
+}
+
+/*Hide list*/
+.optionsMenu li ul {
+  display:none;
+  position:absolute;
+  min-width:140px;
+}
+
+/*Show list*/
+.optionsMenu li:hover > ul {
+  display:block;
+}
+
+
+
+
+/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+**********************SEARCH BAR ********************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************
+*****************************************************************************/

@@ -1,0 +1,142 @@
+
+
+a{
+	text-decoration:none;
+	color:black;
+}
+
+h3{
+	padding: 5px;
+	font-size: 24px;
+}
+
+
+/************************/
+/*RIGHT COLUMN ELEMENTS*/
+/***********************/
+
+#RightColumn{
+	width: 50%;
+}
+
+#RightColumn .box{
+	position: relative;
+}
+
+#add{
+	text-align: center;
+
+}
+
+#add p{
+	display: inline;
+}
+
+
+
+
+#infoBox{
+	width: auto;
+	margin-bottom: 0px;
+	background-color: var(--color-friend-info);
+}
+
+#infoBox span{
+	font-weight: bold;
+}
+
+.deleteButton{
+	display: block;
+	margin: 20px;
+}
+
+
+
+/************************/
+/*LEFT COLUMN ELEMENTS*/
+/***********************/
+
+#LeftColumn > ul{
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+}
+
+#LeftColumn > ul > li{
+	background-color: var(--color-friend-tuple-light);
+
+	display: inline-flex;
+	margin: 1px 0px 1px 0px;
+
+	border-left-width: 3px;
+	border-left-style: solid;
+	border-left-color: var(--color-friend-tuple);
+
+	height: auto;
+	min-height: 70px;
+
+	padding-right: 20px;
+
+
+	align-items: center;
+}
+
+#LeftColumn a{
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+#options{
+	padding: 10px;
+}
+#options input{
+	margin: 5px;
+	margin-left: 40px;
+}
+
+
+#options p{
+	font-weight: bold;
+}
+
+#addFriend{
+	text-align: center;
+}
+
+#addFriend p{
+	display: inline;
+	margin: auto;
+	width:300px;
+}
+
+#AdvancedSearch h3{
+	float:right;
+}
+
+/*****************************************************/
+/****************************************************/
+/**THIS EXTRA ELEMENTS, ARE ONLY FOR PETITIONS PAGE*/
+/**************************************************/
+/*************************************************/
+.petitionList {
+    border-color: var(--backgroundHeader-color);
+    border-width: thin;
+    border-style: groove;
+}
+
+
+.petition{
+	margin-right:3%;
+	margin-left:3%;
+}
+.petition>h5 {
+	margin: 0px 10px 0px 10px;
+}
+
+.petition>a {
+    width: 60%;
+}
+
